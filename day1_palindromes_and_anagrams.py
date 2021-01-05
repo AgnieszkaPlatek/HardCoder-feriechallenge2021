@@ -1,3 +1,15 @@
+"""
+Napisz program, który prosi użytkownika o podanie dowolnego napisu. Następnie program wyświetla na ekranie
+to słowo wspak (od prawej do lewej) i wyświetla komunikat czy to wyrażenie jest palindromem
+(czyli czytane wspak daje do samo wyrażenie np. “ala”, “Kobyła ma mały bok”
+(inne przykłady: http://www.palindromy.pl/pal_kr.php).
+Podczas sprawdzania ignoruj wielkość liter oraz znaki niebędące literami.
+Następnie wywołaj dowolną stronę internetową, która pokaże anagramy oraz słowa utworzone po usunięciu liter,
+np. https://poocoo.pl/scrabble-slowa-z-liter/hardcoder
+Propozycja rozszerzenia: samodzielnie wyszukaj anagramy i słowa utworzone po usunięciu liter z podanego słowa,
+na przykład wykorzystując słownik wspomniany na stronie https://anagramy.wybornie.com/
+"""
+
 import webbrowser
 
 from requests_html import HTMLSession
