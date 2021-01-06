@@ -80,7 +80,7 @@ def send_email(name, surname, email_to, email_from, email_password):
     :return: None
     """
     msg = EmailMessage()
-    msg['Subject'] = 'Testx4 Your image'
+    msg['Subject'] = 'Test Your image'
     msg['From'] = email_from
     msg['To'] = email_to
     msg.set_content(f"Hi {name}! It's file generated for you.")
