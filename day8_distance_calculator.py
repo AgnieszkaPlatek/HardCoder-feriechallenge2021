@@ -40,7 +40,7 @@ def find_distance(a, b):
     :param b: tuple of coordinates (latitude, longitude)
     :return: float distance in kilometers
     """
-    return round(distance.geodesic(a, b, ellipsoid='WGS-84').kilometers, 2)
+    return round(distance.geodesic(a, b).kilometers, 2)
 
 
 def find_my_ip_location():
