@@ -33,7 +33,7 @@ def read_python_files():
         file_data = {'filename': filename}
         with open(filename, 'r', encoding="utf8") as f:
             data = f.read()
-            for char in ':,.!?\"\'[]()\\/':
+            for char in ':,.!*?=\"\'[]{}()\\/':
                 data = data.replace(char, ' ')
             lines = [line for line in data.splitlines() if line != '']
             start = 0
@@ -46,7 +46,7 @@ def read_python_files():
             words = []
             for line in lines:
                 words += line.split(' ')
-            words = [word.rstrip('\n') for word in words if word != '']
+            words = [word.rstrip('\n') for word in words if word != '' and not word.isdigit()]
             word_cnt = Counter()
             for word in words:
                 word_cnt[word] += 1
@@ -59,7 +59,6 @@ def read_python_files():
             python_files.append(file_data)
 
         most_common_word = max(words_total.items(), key=lambda x: x[1])
-
 
     return {'python_files': python_files, 'lines_total': lines_total, 'keywords': keywords_total,
             'imports': imports_total, 'most_common_word': most_common_word, 'num_words': len(words_total)}
